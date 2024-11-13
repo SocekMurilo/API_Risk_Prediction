@@ -1,0 +1,27 @@
+#Type of risk, Impact/Consequences, Project, Metier, Jalón Affecte, Probability, Impact
+
+{
+  "Tipo de Risco": "Operational",
+  "Impacto/Consequencia": "Atraso no DOC Série/ Atraso no Jalon ABVC",
+  "Projeto": "BBB Ph2",
+  "Metier": "DEA-VA",
+  "Jalon Afetado": "ABVC",
+  "Probabilidade": "Low",
+  "Impacto": "Medium"
+}
+
+
+############################################################################
+
+#rsk_type, rsk_probability, rsk_project_id, rsk_impact, rsk_plant, rsk_jalon, rsk_metier, rsk_status 
+
+{
+  "Tipo de Risco": 1,
+  "Probabilidade": 1,
+  "Projeto": 1,
+  "Impacto": 1,
+  "Planta" : 1
+  "Jalon Afetado": 1,
+  "Metier": 1,
+  "Status" : 1
+}
