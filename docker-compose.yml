@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: db
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      
+  backend: 
+    container_name: backend
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/home/app
+
+
+volumes:
+  postgres: 
+    name: postgres
