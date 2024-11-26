@@ -9,9 +9,11 @@ from flask_cors import CORS
 import joblib
 import pandas as pd
 from matplotlib import pyplot as plt
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
 
 # Modelo
-from modelo_postgre import Machine_Learning
+from models.modelo_postgre import Machine_Learning
 
 app = Flask(__name__)
 CORS(app)
@@ -21,6 +23,9 @@ model = joblib.load('models/model.joblib')
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
+        if not request.is_json:
+            return jsonify({'error': 'Content-Type must be application/json'}), 400
+        
         inputData = request.json
 
         Machine_Learning()
@@ -51,9 +56,10 @@ def predict():
         predictions = model.predict(data)
         predictions_list = predictions.tolist()
 
-        return jsonify({'prediction': predictions_list}), 200
+        return jsonify({'rskClassification': predictions_list}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5020)
+    print(" * Running on http://0.0.0.0:5020")

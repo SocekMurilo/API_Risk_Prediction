@@ -1,17 +1,12 @@
-FROM python:3
-
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+FROM python:latest
 
 WORKDIR /app
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-
 RUN mkdir -p models
 
-EXPOSE 5000
+EXPOSE 5020
 
 CMD ["python", "server_postgre.py"]

@@ -1,0 +1,20 @@
+services:
+  renault_ml:
+    container_name: renault_ml
+    image: renault_ml:latest
+    hostname: renault_ml
+    init: true
+    network_mode: host
+    ipc: host
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined    
+
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - .:/app
+
