@@ -9,4 +9,4 @@ RUN mkdir -p models
 
 EXPOSE 5020
 
-CMD ["python", "/app_home/server_postgre.py"]
+CMD ["python", "app_home/server_postgre.py"]
