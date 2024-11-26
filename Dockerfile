@@ -1,5 +1,7 @@
 FROM python:latest
 
+VOLUME ./ /app
+
 WORKDIR /app
 
 COPY requirements.txt ./
