@@ -16,7 +16,7 @@ from modelo_postgre import Machine_Learning
 app = Flask(__name__)
 CORS(app)
 
-model = joblib.load('models/model.joblib')
+model = joblib.load('/app/app_home/models/model.joblib')
 # preprocessor = joblib.load('models/preprocessor.joblib')
 
 

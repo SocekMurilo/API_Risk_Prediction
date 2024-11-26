@@ -80,7 +80,7 @@ def Machine_Learning():
         model = RandomForestClassifier(n_estimators=100, criterion="entropy", max_depth=5, n_jobs=2)
         model.fit(X_train, Y_train)
 
-        dump(model, 'models/model.joblib')
+        dump(model, 'model.joblib')
 
         train_predictions = model.predict(X_train)
         test_predictions = model.predict(X_test)
