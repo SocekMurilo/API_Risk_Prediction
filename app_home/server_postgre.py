@@ -30,14 +30,14 @@ def predict():
 
         Machine_Learning()
 
-        typeRisk = inputData['Tipo de Risco']
-        project = inputData['Projeto']
-        metier = inputData['Metier']
-        jalon = inputData['Jalon Afetado']
-        probability = inputData['Probabilidade']
-        impact = inputData['Impacto']
-        plant = inputData['Planta']
-        status = inputData['Status']
+        typeRisk = inputData['rskType']
+        project = inputData['rskProjectId']
+        metier = inputData['rskMetier']
+        jalon = inputData['rskJalon']
+        probability = inputData['rskProbability']
+        impact = inputData['rskImpact']
+        plant = inputData['rskPlant']
+        status = inputData['rskStatus']
 
         data = pd.DataFrame({
                 "rsk_type": [typeRisk],
