@@ -32,7 +32,6 @@ git push -u devops $SIGLA_DO_DEV(ex: rf)
 
 cd /home/jornada/renault_ml
 
-# Ajuste o start_app.csh para executar o loop...
 docker-compose up --build --detach
 
 # Importante: utilizar o id do container nos comandos commit
